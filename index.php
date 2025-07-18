@@ -118,5 +118,29 @@ for($i=1;$i<=$size;$i++) {
     echo "<br>";
 }
 
+// Pattern 9: Doughnut Shape
+echo str_repeat("<br>", 5);
+echo html_entity_decode("<h1>Pattern 9: Doughnut</h1>");
+$rows = 9;
+$cols = 17;
+$radius = 4;
+$thickness = 1.5; // thickness of the ring
+$centerX = $cols / 2;
+$centerY = $rows / 2;
+
+for ($y = 0; $y < $rows; $y++) {
+    for ($x = 0; $x < $cols; $x++) {
+        $dx = $x - $centerX;
+        $dy = $y - $centerY;
+        $distance = sqrt($dx*$dx + $dy*$dy);
+        if ($distance >= $radius - $thickness && $distance <= $radius + $thickness) {
+            echo "*";
+        } else {
+            echo " ";
+        }
+    }
+    echo "<br>";
+}
+
 echo "</pre>";
 ?>
